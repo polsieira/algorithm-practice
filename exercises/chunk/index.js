@@ -10,17 +10,26 @@
 
 function chunk(array, size) {
   // Solution 1:
-  chunks = []
-  while (array.length >= size) {
-    let chunk = array.splice(0, size);
-    chunks.push(chunk)
-  }
-  if (array.length) {
-    chunks.push(array);
-  }
-  return chunks
+  // chunks = []
+  // while (array.length >= size) {
+  //   let chunk = array.splice(0, size);
+  //   chunks.push(chunk)
+  // }
+  // if (array.length) {
+  //   chunks.push(array);
+  // }
+  // return chunks
 
   // Solution 2:
+  const chunked = [];
+  let index = 0;
+
+  while (index < array.length) {
+    chunked.push(array.slice(index, index + size));
+    index += size;
+  }
+
+  return chunked;
 }
 
 module.exports = chunk;
