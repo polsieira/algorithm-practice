@@ -8,6 +8,24 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+class Queue {
+  constructor() {
+    this.data = [];
+  }
+
+  add(element) {
+    this.data.unshift(element);
+  }
+
+  remove() {
+    return this.data.pop();
+  }
+}
+
+// Unshift and shift make the whole array shift sideways (by adding and removing items from the beginning).
+
+// Push and pop do NOT make the array shift sideways(because they add and remove items at the end).
+
+// In each of those pairs(push / pop and unshift / shift), the longer word makes the array longer.
 
 module.exports = Queue;
